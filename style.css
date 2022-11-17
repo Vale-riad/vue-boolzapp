@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body {
-    background: linear-gradient(180deg, #009688 20%, #DADBD4 10%);
+    background: linear-gradient(180deg, #009688 18%, #DADBD4 10%);
     height: 100vh;
     font-family: 'Lato', sans-serif;
 }
@@ -36,7 +36,7 @@ header {
 }
 .col-my-user{
     display:flex;
-    width:27%;
+    width:30%;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
@@ -87,13 +87,56 @@ main {
     aside
 ----------------- */
 aside {
-    width: 35%;
-    background-color: blueviolet;
+    width: 40%;
     overflow-y: hidden;
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
+.notifiche{
+    display: flex;
+    padding: 10px;
+    height: 70px;
+    background-color: #8edafc;
+}
+.circle{
+    height: 40px;
+    width:40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin: 0px 5px;
+    background-color: white;
 
+   }
+   .circle i{
+    color:#8edafc;
+   }
+  .text-notifiche{
+    color: #b1b1b1;
+    font-size: 12px;
+    
+  }
+  .container-input{
+    display: flex;
+    height: 100%;
+    border: 1px solid #d3d3d34d;
+    margin:3px;
+    border-radius: 2px;
+}
+.input button {
+    color: #b1b1b1;
+    width: 20%;
+    background-color: #fff;
+    border: none;
+}
+.input input {
+    flex-grow: 1;
+    padding: 0 10px;
+    border: none;
+    color: #b1b1b1;
+}
+  
 /* -----------------
     aside
 ----------------- */
