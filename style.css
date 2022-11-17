@@ -6,6 +6,7 @@
 body {
     background: linear-gradient(180deg, #009688 20%, #DADBD4 10%);
     height: 100vh;
+    font-family: 'Lato', sans-serif;
 }
 #app {
     height: 100%;
@@ -13,26 +14,61 @@ body {
     margin: auto;
     padding:20px;
 }
+img{
+    width: 40px;
+}
+ul {
+    display: flex;
+    list-style: none;
+}
+i{
+    padding:5px;
+    color: #b1b1b1
+}
 /* -----------------
     header
 ----------------- */
 header {
     height: 70px;
-    background-color: red;
+    background-color: #eaeaea;
     display: flex;
     justify-content: space-between;
 }
 .col-my-user{
     display:flex;
-    width:30%;
+    width:27%;
     justify-content: space-between;
     align-items: center;
+    padding: 10px;
+}
+.my-user-container{
+    display: flex;
+    align-items: center;
+}
+.rounded{
+    clip-path: circle();
+}
+.my-user-icons{
+    display: flex;
+    margin:5px;
 }
 .col-other-user{
 display: flex;
-width:70%;
+flex-grow: 1;
 justify-content: space-between;
 align-items: center;
+}
+.other-user-image{
+    display: flex;
+}
+.other-user-info{
+   justify-content: center;
+}
+.other-user-info span{
+    color:#b1b1b1;
+}
+.other-user-icons{
+    margin:10px;
 }
 /* -----------------
     header
