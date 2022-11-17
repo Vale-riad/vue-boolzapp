@@ -92,6 +92,7 @@ aside {
     display: flex;
     flex-direction: column;
     background-color: white;
+    height:100%;
 }
 .notifiche{
     display: flex;
@@ -119,7 +120,6 @@ aside {
   }
   .container-input{
     display: flex;
-    height: 100%;
     border: 1px solid #d3d3d34d;
     margin:3px;
     border-radius: 2px;
@@ -136,7 +136,26 @@ aside {
     border: none;
     color: #b1b1b1;
 }
-  
+.chat-container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height:100%;
+}
+  .contact{
+  height: calc(100% / 8);
+    display:flex;
+    margin-top:10px;
+  }
+  .chat-info span{
+color: #b1b1b1;
+  }
+  .chat-info-text{
+    font-size: 12px;
+  }
+  .chat-time{
+ padding-left: 115px;
+  }
 /* -----------------
     aside
 ----------------- */
