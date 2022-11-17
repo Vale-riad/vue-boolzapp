@@ -3,3 +3,75 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background: linear-gradient(180deg, #009688 20%, #DADBD4 10%);
+    height: 100vh;
+}
+#app {
+    height: 100%;
+    max-width:1230px;;
+    margin: auto;
+    padding:20px;
+}
+/* -----------------
+    header
+----------------- */
+header {
+    height: 70px;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+}
+.col-my-user{
+    display:flex;
+    width:30%;
+    justify-content: space-between;
+    align-items: center;
+}
+.col-other-user{
+display: flex;
+width:70%;
+justify-content: space-between;
+align-items: center;
+}
+/* -----------------
+    header
+----------------- */
+/* -----------------
+    main
+----------------- */
+main {
+    display: flex;
+    height: calc(100% - 70px);
+}
+/* -----------------
+    main
+----------------- */
+/* -----------------
+    aside
+----------------- */
+aside {
+    width: 35%;
+    background-color: blueviolet;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -----------------
+    aside
+----------------- */
+.main-chat {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.col-messages {
+    flex-grow: 1;
+    background-color: yellow;
+
+}
+.col-text {
+    height: 70px;
+    background-color: bisque;
+}
