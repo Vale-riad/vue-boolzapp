@@ -159,17 +159,46 @@ color: #b1b1b1;
 /* -----------------
     aside
 ----------------- */
+/* -----------------
+    main
+----------------- */
 .main-chat {
     display: flex;
     flex-direction: column;
     width: 100%;
+    background-image: url(img/mine.jpg);
 }
 .col-messages {
     flex-grow: 1;
-    background-color: yellow;
-
+    display: flex;
+}
+.user-text{
+    margin-left: auto;
+    margin: auto;
+    background-color: white;
+    padding: 10px 100px 10px 20px;
+    border-radius: 5px;
+    
+    
+}
+.other-user-text{
+    margin-right: auto;
+    padding: 30px;
+    
+}
+.greenbox{
+    background-color: #d5f9ba;
+    padding: 15px 100px 15px 20px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.other-user-info{
+    margin-top:5px ;
 }
 .col-text {
     height: 70px;
     background-color: bisque;
 }
+/* -----------------
+    main
+----------------- */
