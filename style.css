@@ -140,7 +140,6 @@ aside {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    height:100%;
 }
   .contact{
   height: calc(100% / 8);
@@ -171,18 +170,21 @@ color: #b1b1b1;
 .col-messages {
     flex-grow: 1;
     display: flex;
+justify-content: space-between;
 }
 .user-text{
-    margin-left: auto;
     margin: auto;
     background-color: white;
     padding: 10px 100px 10px 20px;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 .other-user-text{
     margin-right: auto;
     padding: 30px;
 }
+
 .greenbox{
     background-color: #d5f9ba;
     padding: 15px 100px 15px 20px;

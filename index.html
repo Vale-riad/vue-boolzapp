@@ -64,80 +64,10 @@
                 <input type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
             <div class="chat-container">
-                <div class="contact">
-                    <img class="rounded" src="img/avatar_1.jpg">
+                <div class="contact" v-for= "contact in contacts">
+                    <img class="rounded" :src="` img/avatar${contact.avatar}.jpg` ">
                     <div class="chat-info">
-                        <h5>Michele</h5>
-                        <span class="chat-info-text">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="chat-time">
-                        <span>12.00</span>
-                    </div>
-                </div>
-                <div class="contact">
-                    <img class="rounded" src="img/avatar_1.jpg">
-                    <div class="chat-info">
-                        <h5>Michele</h5>
-                        <span class="chat-info-text">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="chat-time">
-                        <span>12.00</span>
-                    </div>
-                </div>
-                <div class="contact">
-                    <img class="rounded" src="img/avatar_1.jpg">
-                    <div class="chat-info">
-                        <h5>Michele</h5>
-                        <span class="chat-info-text">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="chat-time">
-                        <span>12.00</span>
-                    </div>
-                </div>
-                <div class="contact">
-                    <img class="rounded" src="img/avatar_1.jpg">
-                    <div class="chat-info">
-                        <h5>Michele</h5>
-                        <span class="chat-info-text">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="chat-time">
-                        <span>12.00</span>
-                    </div>
-                </div>
-                <div class="contact">
-                    <img class="rounded" src="img/avatar_1.jpg">
-                    <div class="chat-info">
-                        <h5>Michele</h5>
-                        <span class="chat-info-text">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="chat-time">
-                        <span>12.00</span>
-                    </div>
-                </div>
-                <div class="contact">
-                    <img class="rounded" src="img/avatar_1.jpg">
-                    <div class="chat-info">
-                        <h5>Michele</h5>
-                        <span class="chat-info-text">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="chat-time">
-                        <span>12.00</span>
-                    </div>
-                </div>
-                <div class="contact">
-                    <img class="rounded" src="img/avatar_1.jpg">
-                    <div class="chat-info">
-                        <h5>Michele</h5>
-                        <span class="chat-info-text">Ultimo messaggio inviato</span>
-                    </div>
-                    <div class="chat-time">
-                        <span>12.00</span>
-                    </div>
-                </div>
-                <div class="contact">
-                    <img class="rounded" src="img/avatar_1.jpg">
-                    <div class="chat-info">
-                        <h5>Michele</h5>
+                        <h5>{{contact.name}}</h5>
                         <span class="chat-info-text">Ultimo messaggio inviato</span>
                     </div>
                     <div class="chat-time">
@@ -147,15 +77,15 @@
             </div>
     </aside>
     <div class="main-chat">
-        <div class="col-messages">
-            <div class="user-text">
-                <h5>Ho fatto tutto!</h5>
-            </div>
-            <div class="other-user-text">
-                <h5 class="greenbox">Hai portato a spasso il cane?<h5>
-                    <h5 class="greenbox">Ricordati di stendere i panni</h5>
-                </div>
+    <div class="col-messages">
+        <div class="user-text">
+            <h5>Ho fatto tutto!</h5>
         </div>
+        <div class="other-user-text">
+            <h5 class="greenbox">Hai portato a spasso il cane?<h5>
+                <h5 class="greenbox">Ricordati di stendere i panni </h5>
+            </div>
+    </div>
         <div class="col-text">
             <div class="icon-col-text"><a href="#"><i class="fa-regular fa-face-smile"></i></a></div>
             <div class="type-message">
