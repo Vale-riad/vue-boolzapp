@@ -183,11 +183,20 @@ createApp({
     },
    sendMessage(){
     const newObjMessage = {
+        date: new Date,
         message: this. newMessage,
         status: 'sent',
     };
    this.contacts[this.currentContact].message.push(newObjMessage);
    this.newMessage='';
+   setTimeout(() => {
+    const newMessageReceived = {
+        date: new Date,
+        message: 'Ci vediamo dopo',
+        status: 'received'
+    };
+    this.contacts[this.currentContact].messages.push(newMessageReceived);
+}, 1000);
    }
    
    }
