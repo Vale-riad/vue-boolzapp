@@ -193,7 +193,7 @@ createApp({
     const newMessageReceived = {
         date: new Date,
         message: 'Ci vediamo dopo',
-        status: 'received'
+        status: 'received',
     };
     this.contacts[this.currentContact].messages.push(newMessageReceived);
 }, 1000);
