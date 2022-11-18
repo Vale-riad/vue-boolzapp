@@ -184,10 +184,10 @@ createApp({
    sendMessage(){
     const newObjMessage = {
         date: new Date,
-        message: this. newMessage,
+        message: this.newMessage,
         status: 'sent',
     };
-   this.contacts[this.currentContact].message.push(newObjMessage);
+   this.contacts[this.currentContact].messages.push(newObjMessage);
    this.newMessage='';
    setTimeout(() => {
     const newMessageReceived = {
