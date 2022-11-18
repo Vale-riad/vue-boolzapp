@@ -64,12 +64,16 @@
                 <input type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
             <div class="chat-container">
-                <div class="contact" v-for= "contact in contacts">
-                    <img class="rounded" :src="` img/avatar${contact.avatar}.jpg` ">
-                    <div class="chat-info">
-                        <h5>{{contact.name}}</h5>
-                        <span class="chat-info-text">Ultimo messaggio inviato</span>
+                <div class="contact" v-for= "(contact, index) in contacts" :class="{active: index===currentContact}">
+                    <div class="avatar">
+                        <img class="rounded" :src="` img/avatar${contact.avatar}.jpg` ">
+                        <div class="chat-info">
+                            <h5>{{contact.name}}</h5>
+                            <span class="chat-info-text">{{contact.messages[contact.messages.length-1].message}}</span>
+                        </div>
                     </div>
+                    
+                    
                     <div class="chat-time">
                         <span>12.00</span>
                     </div>
@@ -77,14 +81,11 @@
             </div>
     </aside>
     <div class="main-chat">
-    <div class="col-messages" v-for="message in contacts[currentContact].messages" :class="message.status">
-        <div class="user-text">
-            <h5>{{message.message}}</h5>
-        </div>
-        <div class="other-user-text">
-                
+        <div class="col-messages">
+            <div  v-for="message in contacts[currentContact].messages" :class="message.status">
+                <span>{{message.message}}</span>
+                <small>{{new Date(message.date).toLocaleTimeString('it-IT', { hour: 'numeric', minute: 'numeric' })}}</small>
             </div>
-    </div>
         <div class="col-text">
             <div class="icon-col-text"><a href="#"><i class="fa-regular fa-face-smile"></i></a></div>
             <div class="type-message">
