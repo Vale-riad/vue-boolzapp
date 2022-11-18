@@ -186,9 +186,9 @@ createApp({
         message: this. newMessage,
         status: 'sent',
     };
-    this.contacts.push(newObjMessage);
-    this.newMessage='',
+   this.contacts[this.currentContact].message.push(newObjMessage);
+   this.newMessage='',
    }
-    
+   
    }
 }).mount('#app')
