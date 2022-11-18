@@ -64,7 +64,7 @@
                 <input type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
             <div class="chat-container">
-                <div class="contact" v-for= "(contact, index) in contacts" :class="{active: index===currentContact}">
+                <div class="contact" v-for= "(contact, index) in contacts" :class="{active: index===currentContact}" @click="changeContact(index)">
                     <div class="avatar">
                         <img class="rounded" :src="` img/avatar${contact.avatar}.jpg` ">
                         <div class="chat-info">

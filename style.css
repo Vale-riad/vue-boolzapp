@@ -16,6 +16,7 @@ body {
 }
 img{
     width: 40px;
+    object-fit: cover;
 }
 ul {
     display: flex;
@@ -141,19 +142,27 @@ aside {
     flex-direction: column;
     flex-grow: 1;
 }
+.avatar{
+    display: flex;
+    padding-left:5px;
+}
   .contact{
   height: calc(100% / 8);
     display:flex;
     margin-top:10px;
+    justify-content: space-between;
+  }
+  .contact.active{
+    background-color: #6b7376;
+  }
+  .contact:not(:last-child){
+    border-bottom: 1px solid lightgray;
   }
   .chat-info span{
 color: #b1b1b1;
   }
   .chat-info-text{
     font-size: 12px;
-  }
-  .chat-time{
- padding-left: 115px;
   }
 /* -----------------
     aside
@@ -165,34 +174,38 @@ color: #b1b1b1;
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-image: url(img/mine.jpg);
+    background-image: url('img/mine.jpg');
+    
 }
 .col-messages {
-    flex-grow: 1;
+    overflow-y: auto;
     display: flex;
-justify-content: space-between;
+    flex-direction: column;
 }
-.user-text{
-    margin: auto;
-    background-color: white;
-    padding: 10px 100px 10px 20px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: space-between;
+.sent, .received {
+    position: relative;
+    font-size: 15px;
+    margin-bottom: 10px;
+    max-width: 300px;
+    padding:20px;
+    border-radius: 15px;
 }
-.other-user-text{
-    margin-right: auto;
-    padding: 30px;
+.sent {
+    background-color: #d5f9ba;
+    align-self: flex-end;
+    margin:25px;
+}
+.received {
+    background-color: #fff;
+    align-self: flex-start;
+    margin:25px;
 }
 
-.greenbox{
-    background-color: #d5f9ba;
-    padding: 15px 100px 15px 20px;
-    border-radius: 5px;
-    margin-top: 5px;
-}
-.other-user-info{
-    margin-top:5px;
+.col-messages small {
+    color: #cdd0bb;
+    position: absolute;
+    bottom: 3px;
+    right: 6px;
 }
 .col-text {
     height: 70px;
@@ -200,6 +213,7 @@ justify-content: space-between;
     display:flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 238px;
 }
 .icon-col-text{
     padding:10px;
@@ -213,6 +227,9 @@ justify-content: space-between;
 }
 .col-text i{
 color:#6b7376;
+}
+.micro-text{
+    padding:10px;
 }
 /* -----------------
     main
