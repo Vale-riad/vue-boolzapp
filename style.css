@@ -153,7 +153,7 @@ input {
     justify-content: space-between;
   }
   .contact.active{
-    background-color: #6b7376;
+    background-color: #e9ebeb;
   }
   .contact:not(:last-child){
     border-bottom: 1px solid lightgray;
@@ -161,9 +161,17 @@ input {
   .chat-info span{
 color: #b1b1b1;
   }
+  .chat-info{
+    padding-left:15px;
+  }
   .chat-info-text{
     font-size: 12px;
   }
+  .chat-time span{
+    font-size: 10px;
+    color: #b1b1b1;
+  }
+
 /* -----------------
     aside
 ----------------- */
