@@ -125,13 +125,13 @@ aside {
     margin:3px;
     border-radius: 2px;
 }
-.input button {
+button {
     color: #b1b1b1;
     width: 20%;
     background-color: #fff;
     border: none;
 }
-.input input {
+input {
     flex-grow: 1;
     padding: 0 10px;
     border: none;
@@ -181,6 +181,7 @@ color: #b1b1b1;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 .sent, .received {
     position: relative;
@@ -213,7 +214,6 @@ color: #b1b1b1;
     display:flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 238px;
 }
 .icon-col-text{
     padding:10px;

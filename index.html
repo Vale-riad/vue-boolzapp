@@ -1,102 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="style.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"> 
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <title>Document</title>
-</head>
-<body>
- <!--inizioapp-->
- <div id="app">
- <!--inizioheader-->
- <header>
-    <div class="col-my-user">
-        <div class="my-user-container">
-        <img class="rounded" src="img/avatar_io.jpg">
-        <span>Valentina</span>
-        </div>
-       <div class="my-user-icons">
-        <ul>                        
-            <li><a href="#"><i class="fa-solid fa-circle-notch"></i></a></li>
-            <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
-            <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
-        </ul>
-       </div>
-   </div>
-    <div class="col-other-user">
-        <div class="other-user-image">
-            <img class="rounded" src="img/avatar_1.jpg">
-            <div class="other-user-info">
-            <h4>Michele</h4>
-            <span>Ultimo accesso oggi alle ore 12.00</span>
-           </div>
-        </div>
-        <div class="other-user-icons">
-            <ul>
-                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-paperclip"></i></a></li>
-                <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
-            </ul>
-        </div>
-    </div>
- </header>
- <!--fineheader-->
- <!--iniziomain-->
- <main>
-    <aside>
-        <div class="notifiche">
-            <div class="circle">
-                <a href="#"></a><i class="fa-solid fa-bell-slash"></i><a>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"> 
+        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+    <!--inizioapp-->
+    <div id="app">
+    <!--inizioheader-->
+        <header>
+            <div class="col-my-user">
+                    <div class="my-user-container">
+                        <img class="rounded" src="img/avatar_io.jpg">
+                        <span>Valentina</span>
+                    </div>
+                    <div class="my-user-icons">
+                        <ul>                        
+                            <li><a href="#"><i class="fa-solid fa-circle-notch"></i></a></li>
+                            <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
+                            <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+                        </ul>
+                    </div>
             </div>
-            <div class="notifiche-info">
-                <h5>Ricevi notifiche di nuovi messaggi</h5>
-                <a class="text-notifiche"href="#">Attiva notifiche Desktop</a>
+            <div class="col-other-user">
+                <div class="other-user-image">
+                    <img class="rounded" :src="`img/avatar${contacts[currentContact].avatar}.jpg`">
+                    <div class="other-user-info">
+                        <h4>{{contacts[currentContact].name}}</h4>
+                        <span>Ultimo accesso oggi alle {{new Date(contacts[currentContact].messages[contacts[currentContact].messages.length-1].date).toLocaleTimeString('it-IT', { hour: 'numeric', minute: 'numeric' })}}</span>
+                    </div>
+                </div>
+                <div class="other-user-icons">
+                    <ul>
+                        <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <li><a href="#"><i class="fa-solid fa-paperclip"></i></a></li>
+                        <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="input">
-            <div class="container-input">
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                <input type="text" placeholder="Cerca o inizia una nuova chat">
-            </div>
-            <div class="chat-container">
-                <div class="contact" v-for= "(contact, index) in contacts" :class="{active: index===currentContact}" @click="changeContact(index)">
-                    <div class="avatar">
-                        <img class="rounded" :src="` img/avatar${contact.avatar}.jpg` ">
-                        <div class="chat-info">
-                            <h5>{{contact.name}}</h5>
-                            <span class="chat-info-text">{{contact.messages[contact.messages.length-1].message}}</span>
+        </header>
+        <!--fineheader-->
+        <!--iniziomain-->
+        <main>
+            <aside>
+                <div class="notifiche">
+                    <div class="circle">
+                        <a href="#"></a><i class="fa-solid fa-bell-slash"></i><a>
+                    </div>
+                    <div class="notifiche-info">
+                        <h5>Ricevi notifiche di nuovi messaggi</h5>
+                        <a class="text-notifiche"href="#">Attiva notifiche Desktop</a>
+                    </div>
+                </div>
+                <div class="container-input">
+                    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat"  v-model="searchInput" @keyup="checkName">
+                </div>
+                <div class="chat-container">
+                    <div class="contact" v-for= "(contact, index) in contacts" :class="{active: index===currentContact}" v-show="contact.visible" @click="changeContact(index)">
+                        <div class="avatar">
+                            <img class="rounded" :src="` img/avatar${contact.avatar}.jpg` ">
+                            <div class="chat-info">
+                                <h5>{{contact.name}}</h5>
+                                <span class="chat-info-text">{{contact.messages[contact.messages.length-1].message}}</span>
+                            </div>
+                        </div>
+                        <div class="chat-time">
+                            <span>{{new Date(contacts[currentContact].messages[contacts[currentContact].messages.length-1].date).toLocaleTimeString('it-IT', { hour: 'numeric', minute: 'numeric' })}}</span>
                         </div>
                     </div>
-                    <div class="chat-time">
-                        <span>12.00</span>
+                </div>
+            </aside>
+            <div class="main-chat">
+                <div class="col-messages">
+                    <div  v-for="message in contacts[currentContact].messages" :class="message.status">
+                        <span>{{message.message}}</span>
+                        <small>{{new Date(message.date).toLocaleTimeString('it-IT', { hour: 'numeric', minute: 'numeric' })}}</small>
+                    </div>
+                </div>
+                <div class="col-text">
+                    <div class="icon-col-text">
+                        <a href="#"><i class="fa-regular fa-face-smile"></i></a>
+                    </div>
+                    <div class="type-message"  @submit.prevent="sendMessage">
+                        <input class="size-input" type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage">
+                    </div>
+                    <div class="micro-text">
+                        <a href="#"><i class="fa-solid fa-microphone"></i></a>
                     </div>
                 </div>
             </div>
-    </aside>
-    <div class="main-chat">
-        <div class="col-messages">
-            <div  v-for="message in contacts[currentContact].messages" :class="message.status">
-                <span>{{message.message}}</span>
-                <small>{{new Date(message.date).toLocaleTimeString('it-IT', { hour: 'numeric', minute: 'numeric' })}}</small>
-            </div>
-        <div class="col-text">
-            <div class="icon-col-text"><a href="#"><i class="fa-regular fa-face-smile"></i></a></div>
-            <div class="type-message"  @submit.prevent="sendMessage">
-                <input class="size-input" type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendMessage">
-            </div>
-             <div class="micro-text"><a href="#"><i class="fa-solid fa-microphone"></i></a></div>
-        </div>
-        <div>
+        </main>
+    <!--finemain-->
     </div>
-</main>
- <!--finemain-->
-</div>
- <!--fineapp-->
-    <script src="main.js"></script>
-</body>
+    <!--fineapp-->
+        <script src="main.js"></script>
+    </body>
 </html>

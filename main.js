@@ -5,6 +5,7 @@ createApp({
       return {
         currentContact :0,
         newMessage: '',
+        searchInput:"",
         contacts: [
             {
                 name: 'Michele',
@@ -197,6 +198,18 @@ createApp({
     };
     this.contacts[this.currentContact].messages.push(newMessageReceived);
 }, 1000);
+   },
+
+   checkName(){
+    this.contacts.forEach(element => {
+        if(this.searchInput.length===0){
+            element.visible=true;
+        }else if(element.name.toUpperCase().includes(this.searchInput.toUpperCase())){
+            element.visibile=true;
+        }else{
+            element.visible=false;
+        }
+    });
    }
    
    }
